@@ -16,4 +16,6 @@
 
 Deployed: 
 
-https://github.com/fongvang09/Team-Profile-Generator/settings
+GitHub: https://github.com/fongvang09/Team-Profile-Generator/settings
+
+Screencastify: 
