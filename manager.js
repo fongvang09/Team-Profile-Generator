@@ -1,9 +1,10 @@
-class Intern {
+class Manager {
     constructor(name, ID, email, role) {
         this.name = name;
         this.ID = ID;
         this.email = email;
-        this.role = "Intern";
+        this.role = "Manager";
+        this.officeNumber = this.officeNumber;
     }
     getName() {
         return this.name;
@@ -20,4 +21,4 @@ class Intern {
 }
 
 
-module.exports = Intern;
+module.exports = Manager;

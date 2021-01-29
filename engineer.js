@@ -3,7 +3,7 @@ class Engineer {
         this.name = name;
         this.ID = ID;
         this.email = email;
-        this.role = role;
+        this.role = "Engineer";
     }
     getName() {
         return this.name;
