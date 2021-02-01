@@ -1,10 +1,10 @@
 const inquirer = require("inquirer")
-const jest =  require("jest")
+const jest = require("jest")
 const fs = require("fs")
-const employee = require("./employee")
-const engineer = require("./engineer")
-const intern = require("./intern")
-const manager = require("./manager")
+const Employee = require("./lib/Employee")
+const Engineer = require("./lib/Engineer")
+const Intern = require("./lib/Intern")
+const Manager = require("./lib/Manager")
 
 const main = [
     {
@@ -19,6 +19,7 @@ const main = [
         choices: ["Manager", "Engineer", "Intern"]
     }
 ]
+
 const employee = [
     {
         type: "input",
@@ -41,6 +42,7 @@ const employee = [
         name: "officeNumber",
     }
 ]
+
 const engineer = [
     {
         type: "input",
@@ -63,6 +65,7 @@ const engineer = [
         name: "engineerGitHub",
     },
 ]
+
 const intern = [
     {
         type: "input",
@@ -88,11 +91,54 @@ const intern = [
 
 
 
-// inquirer.prompt()
-//     .then(response => {
-//         let html = `
+inquirer.prompt([
+    {
+        "name": "name",
+        "message": "What is the employee's name?",
+        validate: getName => {
+            if (getName) {
+                return true;
+            } else {
+                console.log("Please enter a valid name:");
+                return false;
+            }
+        }
+    },
+    {
+        "name": "ID",
+        "message": "What is the employee's ID?",
+        validate: getID => {
+            if (getID) {
+                return true;
+            } else {
+                console.log("Please enter a valid ID:")
+                return false;
+            }
+        }
+    },
+    {
+        "name": "email",
+        "message": "What is the employee's email?",
+        validate: getEmail => {
+            if (getEmail) {
+                return true;
+            } else {
+                console.log("Please enter a valid email address:");
+                return false;
+            }
+        }
+    },
+    {
+        "type": "list",
+        "name": "role",
+        "message": "Please select the employee's role:",
+        "choices": ["Manager", "Engineer", "Intern", "Employee"]
+    }
+])
+    .then(response => {
+        let html = `
         
-//         `;
-//         fs.writeFile("./index.html", html, err => err ?
-//         console.log(err) : console.log("success"));
-//     });
+        `;
+        fs.writeFile("./dist/index.html", html, err => err ?
+            console.log(err) : console.log("success"));
+    });
