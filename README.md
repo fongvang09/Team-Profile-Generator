@@ -10,7 +10,7 @@ Your task is to build a Node.js command-line application that takes in informati
 
 ## Links
 
-Deployed: https://github.com/fongvang09/Team-Profile-Generator/settings
+Deployed: https://fongvang09.github.io/Team-Profile-Generator/
 
 GitHub: https://github.com/fongvang09/Team-Profile-Generator/settings
 
